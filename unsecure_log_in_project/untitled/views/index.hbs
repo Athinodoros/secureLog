@@ -1,0 +1,25 @@
+<h1>Log in form</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+username :
+<input type="text" class="username" name=" username" value="{{name}}">
+<br/>
+<br/>
+password :
+<input type="text" class="password" name="password">
+<br/>
+<br/>
+<button onclick="login()">
+    Log in
+</button>
+
+{{failed}}
+<script>
+
+    function login() {
+        document.location = "/login?username="+ $(".username").val()+"&password="+$(".password").val()
+        $.ajax({
+            url: "/login?username="+ $(".username").val()+"&password="+$(".password").val()
+        });
+    }
+
+</script>
